@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>innovacion.ec</title>
+    <link href="/src/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <!-- Chatbase Widget -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "XmcYYvKMh7gH5gsmFHt_L",
+            domain: "www.chatbase.co",
+            position: "left", // Add position configuration
+            bottom: "20px"    // Add bottom spacing
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="XmcYYvKMh7gH5gsmFHt_L"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+    <script>
+        function sendHeight() {
+            var height = document.documentElement.scrollHeight;
+            window.parent.postMessage({ height: height }, '*');
+        }
+
+        window.addEventListener('load', sendHeight);
+        window.addEventListener('resize', sendHeight);
+    </script>
+
+    <!-- Vapi Widget -->
+    <script>
+      var vapiInstance = null;
+      const assistant = "46cd90fb-821b-46a4-b845-ec7f6361e899";
+      const apiKey = "d4f6f78c-9e45-429f-809f-bf2c4997dc8e"; 
+      const buttonConfig = {}; // Modify this as required
+
+      (function (d, t) {
+        var g = document.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src =
+          "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+
+        g.onload = function () {
+          vapiInstance = window.vapiSDK.run({
+            apiKey: apiKey, // mandatory
+            assistant: assistant, // mandatory
+            config: buttonConfig, // optional
+          });
+        };
+      })(document, "script");
+    </script>
+</body>
+</html>

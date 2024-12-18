@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-[#E5E5E5] min-h-screen py-12;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.window-dots > div {
+  @apply w-3 h-3 rounded-full;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.window-dots > div:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.window-dots > div:nth-child(1) {
+  @apply bg-[#FF5F57];
+  box-shadow: 0 4px 12px rgba(255, 95, 87, 0.4);
+}
+
+.window-dots > div:nth-child(2) {
+  @apply bg-[#FEBC2E];
+  box-shadow: 0 4px 12px rgba(254, 188, 46, 0.4);
+}
+
+.window-dots > div:nth-child(3) {
+  @apply bg-[#28C840];
+  box-shadow: 0 4px 12px rgba(40, 200, 64, 0.4);
+}
+
+/* Vapi Widget Styles */
+#vapi-widget {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 1000 !important;
+}
+
+#vapi-widget button {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.2s ease !important;
+}
+
+#vapi-widget button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 640px) {
+  body {
+    @apply py-6;
+  }
+  
+  .max-w-7xl {
+    @apply px-2;
+  }
+
+  #vapi-widget {
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+}
